@@ -1,0 +1,35 @@
+@mixin card-shape {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  height: 175px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+:host {
+  .flip-card {
+    @include card-shape;
+    background-color: #fff;
+
+    .face-down {
+      @include card-shape;
+      background-color: #66c2ff;
+      border: 1px solid #114563;
+    }
+
+    .face-up {
+      @include card-shape;
+      background-color: #fff;
+      border: 1px solid #114563;
+      font-size: 2rem;
+      color: #155174;
+    }
+  }
+
+  .card-hidden {
+    visibility: hidden;
+  }
+}

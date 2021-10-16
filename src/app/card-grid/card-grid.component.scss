@@ -1,0 +1,29 @@
+:host {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem;
+
+  .card-grid-header {
+    min-height: 40px;
+    margin-bottom: 40px;
+
+    .header-title {
+      width: 100%;
+      text-align: left;
+      display: flex;
+      flex-flow: row;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+  }
+
+  .card-holder {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+  }
+}

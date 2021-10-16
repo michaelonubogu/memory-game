@@ -1,0 +1,23 @@
+<div class="container overflow-hidden">
+  <div class="row card-grid-header">
+    <div class="col-12 header-title">
+      <div>
+        <h4 *ngIf="showMessage">{{ notificationMessage }}</h4>
+      </div>
+      <button type="button" class="btn btn-primary" (click)="resetGame()">
+        Reset Game
+      </button>
+    </div>
+  </div>
+  <div class="gy-3 gx-1 row">
+    <div class="col-md-2 card-holder" *ngFor="let card of cards">
+      <flip-card
+        [id]="card.id"
+        [value]="card.value"
+        [enableFlipping]="card.enableFlipping"
+        [matched]="card.matched"
+        (cardFlippedEvent)="handleCardFlip($event)"
+      ></flip-card>
+    </div>
+  </div>
+</div>

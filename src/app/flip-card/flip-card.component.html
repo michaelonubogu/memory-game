@@ -1,0 +1,17 @@
+<div
+  class="flip-card"
+  [ngClass]="{ 'card-hidden': isHidden }"
+  (click)="flipCard()"
+  [@flip]="isFlipped"
+  [@fadeOutUp]="matched"
+  (@fadeOutUp.done)="setHidden()"
+>
+  <ng-container *ngIf="isFlipped; else notFlippedTemplate">
+    <div class="face-up">
+      {{ value }}
+    </div>
+  </ng-container>
+  <ng-template #notFlippedTemplate>
+    <div class="face-down"></div>
+  </ng-template>
+</div>
